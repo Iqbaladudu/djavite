@@ -14,6 +14,7 @@ __all__ = ["get_config", "NpmManager", "__version__"]
 def get_config(setting_name):
     vite_dev_server_url = getattr(settings, "VITE_DEV_SERVER_URL", "http://localhost:5173")
     config = {
+        "DJANGO_MAIN_DIR": getattr(settings, "MAIN_DJANGO_DIR", os.path.dirname(settings.SETTINGS_MODULE.replace('.', os.sep))),
         "NPM_BIN_PATH": getattr(settings, "NPM_BIN_PATH", "npm"),
         "VITE_DEV_SERVER_URL": vite_dev_server_url,
         "VITE_DEV_MODE": getattr(settings, "VITE_DEV_MODE", True),
