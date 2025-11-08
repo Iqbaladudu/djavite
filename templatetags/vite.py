@@ -1,7 +1,7 @@
 from django import template
 from django.conf import settings
 
-from vite import get_config
+from templatetags.vite import get_config
 
 register = template.Library()
 
