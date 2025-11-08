@@ -1,0 +1,11 @@
+{% load static %}
+
+{% if django_dev %}
+    <script type="module" src="{{ vite_hmr }}"></script>
+    <script type="module" src="{{ vite_js_entry }}"></script>
+
+    <link rel="stylesheet" href="{{ vite_css_entry }}">
+{% else %}
+    <script type="module" src="{% static js_src %}"></script>
+    <link rel="stylesheet" href="{% static css_src %}">
+{% endif %}
